@@ -1,4 +1,4 @@
-It's a test for the methods to set all bits in cpu registers to 1, mentioned by Peter Cordes.
+It's a test for the [methods](https://stackoverflow.com/questions/45105164/set-all-bits-in-cpu-register-to-1-efficiently) to set all bits in cpu registers to 1, mentioned by Peter Cordes.
 
 To run the benchmark, use `chmod +x set_to_all_1.sh && ./set_to_all_1.sh`.
 
