@@ -1,0 +1,148 @@
+sudo ./cont.sh
+rm -f test main.o bandwidth.o
+g++ -g -c -no-pie -O2 -Wall -Wextra -fPIC -o main.o main.cpp
+nasm -felf64 -g -Fdwarf -o bandwidth.o bandwidth.asm
+g++ -no-pie -o test main.o util.o page-info.o bandwidth.o
+#
+Source pages allocated with transparent hugepages: 100.0
+
+ Performance counter stats for 'taskset -c 1 ./test 500000 8':
+
+     1,323,116,892      instructions              #    0.95  insn per cycle         
+     1,389,059,826      cycles                                                      
+       381,425,855      r1d1                                                        
+       263,489,309      r2d1                                                        
+            40,156      r4d1                                                        
+
+       0.479606782 seconds time elapsed
+
+       0.419072000 seconds user
+       0.060443000 seconds sys
+
+
+Source pages allocated with transparent hugepages: 100.0
+
+ Performance counter stats for 'taskset -c 1 ./test 500000 16':
+
+     2,496,549,541      instructions              #    1.00  insn per cycle         
+     2,500,733,030      cycles                                                      
+       645,857,860      r1d1                                                        
+       556,202,504      r2d1                                                        
+            81,425      r4d1                                                        
+
+       0.863037060 seconds time elapsed
+
+       0.791157000 seconds user
+       0.071923000 seconds sys
+
+
+Source pages allocated with transparent hugepages: 100.0
+
+ Performance counter stats for 'taskset -c 1 ./test 500000 32':
+
+     4,854,988,001      instructions              #    1.02  insn per cycle         
+     4,746,200,127      cycles                                                      
+     1,206,752,940      r1d1                                                        
+     1,120,090,660      r2d1                                                        
+        13,349,018      r4d1                                                        
+
+       1.637666726 seconds time elapsed
+
+       1.581605000 seconds user
+       0.056056000 seconds sys
+
+
+Source pages allocated with transparent hugepages: 100.0
+
+ Performance counter stats for 'taskset -c 1 ./test 500000 64':
+
+     9,574,748,821      instructions              #    0.52  insn per cycle         
+    18,499,462,369      cycles                                                      
+       156,949,827      r1d1                                                        
+     1,145,477,421      r2d1                                                        
+     2,515,493,296      r4d1                                                        
+
+       6.381975472 seconds time elapsed
+
+       6.318085000 seconds user
+       0.063980000 seconds sys
+
+
+Source pages allocated with transparent hugepages: 100.0
+
+ Performance counter stats for 'taskset -c 1 ./test 500000 128':
+
+    18,999,835,311      instructions              #    0.52  insn per cycle         
+    36,621,793,571      cycles                                                      
+       276,703,684      r1d1                                                        
+     2,289,907,078      r2d1                                                        
+     5,029,116,747      r4d1                                                        
+
+      12.633575966 seconds time elapsed
+
+      12.573726000 seconds user
+       0.060008000 seconds sys
+
+
+Source pages allocated with transparent hugepages: 100.0
+
+ Performance counter stats for 'taskset -c 1 ./test 500000 256':
+
+    37,849,998,872      instructions              #    0.52  insn per cycle         
+    72,831,924,505      cycles                                                      
+       513,305,347      r1d1                                                        
+     4,584,540,452      r2d1                                                        
+    10,055,759,131      r4d1                                                        
+
+      25.124643175 seconds time elapsed
+
+      25.056965000 seconds user
+       0.068002000 seconds sys
+
+
+Source pages allocated with transparent hugepages: 100.0
+
+ Performance counter stats for 'taskset -c 1 ./test 500000 512':
+
+    75,562,036,294      instructions              #    0.52  insn per cycle         
+   145,374,841,822      cycles                                                      
+       990,201,250      r1d1                                                        
+     9,158,855,607      r2d1                                                        
+    20,126,137,237      r4d1                                                        
+
+      50.149139644 seconds time elapsed
+
+      50.081828000 seconds user
+       0.068002000 seconds sys
+
+
+Source pages allocated with transparent hugepages: 100.0
+
+ Performance counter stats for 'taskset -c 1 ./test 500000 1024':
+
+   150,985,408,487      instructions              #    0.52  insn per cycle         
+   290,593,606,913      cycles                                                      
+     1,986,790,793      r1d1                                                        
+    18,329,623,879      r2d1                                                        
+    40,195,532,031      r4d1                                                        
+
+     100.243957232 seconds time elapsed
+
+     100.189388000 seconds user
+       0.056000000 seconds sys
+
+
+Source pages allocated with transparent hugepages: 100.0
+
+ Performance counter stats for 'taskset -c 1 ./test 500000 2048':
+
+   301,889,231,093      instructions              #    0.38  insn per cycle         
+   794,844,148,244      cycles                                                      
+    16,074,788,128      r1d1                                                        
+    39,739,197,536      r2d1                                                        
+    63,102,463,652      r4d1                                                        
+
+     274.190872645 seconds time elapsed
+
+     274.134628000 seconds user
+       0.060000000 seconds sys
