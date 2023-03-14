@@ -34,6 +34,7 @@ int main(){
 	size_t n_programmables = sizeof(programmables) / sizeof(programmables[0]);
 	setup_pmc(core, programmables, n_programmables);
 	zero_pmc(n_programmables);
+	start_pmc();
 	double a=0;
 	for(int i=1;i<=n;i++){
 		a=(double)(rand()+300+i)/(rand()-i);
